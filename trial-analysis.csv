@@ -1,0 +1,4 @@
+Trial,Eligible for useful-rate calculation,Useful rate Mb/s or N/A,Meets 9 s and verification rule,Reason
+A,yes,8.0,yes,Hash matches so it is a verified copy; 8000000 x 8 / 8 s / 1000000 = 8.0 Mb/s and 8 s is within 9 s
+B,yes,6.4,no,Hash matches so it is verified; 8000000 x 8 / 10 s / 1000000 = 6.4 Mb/s but 10 s is over the 9 s limit
+C,no,N/A,no,Hash does not match so it did not deliver the intended file; its 7 s cannot count as a successful transfer

@@ -1,0 +1,12 @@
+Item,Phanha design
+File identity and bytes,lab6-test-8MB.bin; exactly 8000000 bytes (1 MB = 1000000 bytes); SHA-256 hash recorded before any trial
+Ideal lower bound and assumptions,6.4 s (8000000 x 8 = 64000000 bits / 10000000 bit/s); assumes the full bottleneck carries file bits continuously with no setup or protocol overhead or retransmissions or other traffic
+Source destination and path,Source: file server S; destination: client C; same hosts and same route in every trial; path crosses one 10 Mb/s bottleneck link
+Concurrent clients and traffic,One client only; no other transfers on the path during a trial; any background traffic is logged
+Timer start and stop,Start when the client begins the transfer request; stop when the client finishes writing the received file to disk
+File verification,After every trial compute SHA-256 of the received file and compare with the recorded hash; also check the size is exactly 8000000 bytes
+Metric and agreed target,Elapsed time of 9 s or less per verified trial (equivalent to at least 7.1 Mb/s useful throughput)
+Trial count and success rule,10 trials; the test passes only if every trial is verified and finishes within 9 s
+Conditions to hold fixed,Same file and hosts and path and link rate; same client software and settings; same time of day; no other traffic; received file deleted before each trial
+Evidence and invalid trial handling,Log trial number and start and stop times and elapsed seconds and hash result and bytes received and retransmissions if available; a hash mismatch or wrong size is an invalid trial reported as FAILED and never dropped or rerun to replace it; report all trials and not just the fastest
+Person who approves target,Course instructor approves the target and success rule before any trial is run

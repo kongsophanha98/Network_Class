@@ -1,0 +1,4 @@
+Trace row,Direction,Flags,Sequence,Valid ACK or N/A,What the ACK covers,Next sequence for sender,Reason
+1,A_to_B,SYN,1000,N/A,nothing (ACK flag clear),1001,
+2,B_to_A,SYN_ACK,5000,1001,A's SYN (byte 1000),5001,
+3,A_to_B,ACK,1001,5001,B's SYN (byte 5000),1001,

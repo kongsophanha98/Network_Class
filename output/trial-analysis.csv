@@ -1,0 +1,4 @@
+Trial,Eligible for useful-rate calculation,Useful rate Mb/s or N/A,Meets 9 s and verification rule,Reason
+A,yes,8.0,yes,
+B,yes,6.4,no,
+C,no,N/A,no,

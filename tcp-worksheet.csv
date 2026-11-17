@@ -1,0 +1,5 @@
+Data row,First byte,Last byte,Number after range,B next expected byte,Matching B ACK row and value or no ACK shown,Reason
+4,1001,1500,1501,1501,row 5: ACK 1501,Arrives in order so B has everything up to 1500 and expects 1501
+6,1501,2000,2001,1501,no ACK shown,Lost before reaching B so nothing is added to B's buffer and B still expects 1501
+7,2001,2500,2501,1501,row 8: ACK 1501,B buffers 2001-2500 but bytes 1501-2000 are missing so the cumulative ACK stays at 1501 (a duplicate ACK)
+9,1501,2000,2001,2501,row 10: ACK 2501,Retransmission fills the gap and B already buffered 2001-2500 so its next expected byte jumps to 2501
